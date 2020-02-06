@@ -1,0 +1,103 @@
+<div
+  class="box-wrapper"
+  [@slideIn]="animationState"
+  (@slideIn.start)="onAnimationStart($event)"
+  (@slideIn.done)="onAnimationDone($event)"
+>
+  <div class="box">
+    <div class="avatar">
+      <img alt="user avatar" src="{{ userAvatar }} " />
+    </div>
+
+    <div class="box-inner" [@slideIn]>
+      <div class="fields" *ngIf="!canEdit">
+        <h3 class="name">{{ userFullName }}</h3>
+        <h4 class="occupation">some occupation</h4>
+        <p class="location"><i class="fa fa-map-marker"></i>Some location</p>
+      </div>
+
+      <div *ngIf="!showUpload && canEdit">
+        <mat-form-field>
+          <input
+            matInput
+            class="profileInput"
+            type="text"
+            [(ngModel)]="userFullName"
+          />
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput class="profileInput" placeholder="Job Title" type="text" />
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput class="profileInput" placeholder="Location" type="text" />
+        </mat-form-field>
+      </div>
+      <h3 class="followers-title"></h3>
+      <div *ngIf="showUpload" @ngIfAnimation>
+        <div @easeInOut>
+          <div *ngIf="error">
+            {{ error['message'] }}
+          </div>
+          <div *ngIf="uploadResponse.status === 'error'">
+            {{ uploadResponse.message || null }}
+          </div>
+          <div *ngIf="uploadResponse.status === 'progress'">
+            <mat-progress-bar
+              mode="determinate"
+              [value]="uploadResponse.message"
+            >
+            </mat-progress-bar>
+            {{ uploadResponse.message || null }}%
+          </div>
+
+          <form [formGroup]="form">
+            <input
+              #upload
+              hidden
+              type="file"
+              name="avatar"
+              onclick="this.value=null"
+              (change)="onFileChange($event)"
+            />
+            <button
+              (click)="upload.click()"
+              type="button"
+              color="accent"
+              mat-raised-button
+            >
+              Upload Avatar
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="example-button-row">
+        <button
+          (click)="editModeActive()"
+          mat-icon-button
+          aria-label="Edit your profile"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button
+          (click)="toggleUpload()"
+          *ngIf="canEdit"
+          mat-icon-button
+          color="primary"
+          aria-label="Upload avatar image"
+        >
+          <mat-icon>cloud_upload</mat-icon>
+        </button>
+        <button
+          *ngIf="canEdit"
+          mat-icon-button
+          color="accent"
+          aria-label="Save changes to your profile"
+        >
+          <mat-icon>save</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,125 @@
+<body class="bg-img">
+    <div
+      [ngClass]="status ? 'right-panel-active' : ''"
+      class="container"
+      id="container"
+    >
+      <div class="form-container sign-up-container">
+        <form [formGroup]="registerForm">
+          <h1>Create Account</h1>
+          <div class="social-container">
+            <a href="#" class="social" aria-label="register with facebook">
+              <fa-icon [icon]="['fab', 'facebook-f']"></fa-icon>
+            </a>
+            <a href="#" class="social" aria-label="register with twitter">
+              <fa-icon [icon]="['fab', 'twitter']"></fa-icon
+            ></a>
+            <a href="#" class="social" aria-label="register with linked in">
+              <fa-icon [icon]="['fab', 'linkedin']"></fa-icon
+            ></a>
+          </div>
+          <span>or use your email for registration</span>
+          <mat-form-field>
+            <input
+              formControlName="username"
+              matInput
+              type="text"
+              placeholder="User Name"
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              matInput
+              formControlName="email"
+              type="email"
+              placeholder="Email"
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              matInput
+              formControlName="password"
+              type="password"
+              placeholder="Password"
+            />
+          </mat-form-field>
+          <button (click)="register()">Sign Up</button>
+        </form>
+      </div>
+      <div class="form-container sign-in-container">
+        <form [formGroup]="signInForm">
+          <h1>Sign in</h1>
+          <div class="social-container">
+            <a href="#" class="social" aria-label="sign in with facebook">
+              <fa-icon [icon]="['fab', 'facebook-f']"></fa-icon
+            ></a>
+            <a href="#" class="social" aria-label="sign in with twitter">
+              <fa-icon [icon]="['fab', 'twitter']"></fa-icon
+            ></a>
+            <a href="#" class="social" aria-label="sign in with linked in">
+              <fa-icon [icon]="['fab', 'linkedin']"></fa-icon
+            ></a>
+          </div>
+          <span>or use your account</span>
+          <mat-form-field>
+            <input
+              matInput
+              formControlName="email"
+              type="email"
+              placeholder="Email"
+              email
+            />
+            <mat-error
+              *ngIf="
+                signInForm.controls.email.errors &&
+                (signInForm.controls.email.dirty ||
+                  signInForm.controls.email.touched)
+              "
+              >Must be a valid Email</mat-error
+            >
+
+
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              matInput
+              formControlName="password"
+              type="password"
+              placeholder="Password"
+            />
+            <mat-error
+              *ngIf="
+                signInForm.controls.password.errors?.minlength &&
+                (signInForm.controls.password.dirty ||
+                  signInForm.controls.password.touched)
+              "
+              >Must be 8 or more characters</mat-error
+            >
+          </mat-form-field>
+
+          <a href="#" class="forgot-password">Forgot your password?</a>
+          <button  [disabled]="!signInForm.valid" (click)="login()">Sign In</button>
+        </form>
+      </div>
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1>Welcome Back!</h1>
+            <p>
+              To keep connected with us please login with your personal info
+            </p>
+            <button  class="ghost" (click)="clickEvent()" id="signIn">
+              Sign In
+            </button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h1>Hello, Friend!</h1>
+            <p>Enter your personal details and start journey with us</p>
+            <button class="ghost" (click)="clickEvent()" id="signUp">
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>

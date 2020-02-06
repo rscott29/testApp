@@ -1,0 +1,71 @@
+.header {
+  padding: 10px 20px 10px 7px;
+  background: rgb(212, 42, 93);
+  color: #fff;
+}
+
+.user {
+  font-size: 0.7em;
+}
+.userMenu {
+  cursor: pointer;
+  border-left: solid 1px;
+  height: 100%;
+  //  width: 50px;
+  position: relative;
+
+  top: 0;
+  right: 0;
+}
+.menuDown {
+  left: 7px;
+  position: relative;
+  top: 3px;
+}
+.jim {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+button {
+  &.image {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    vertical-align: bottom;
+    margin-left: 10px;
+  }
+}
+header {
+  position: fixed;
+  top: 0;
+  z-index: 11;
+  transition: all 250ms ease-in-out;
+}
+.main-header {
+  @extend header;
+  &.hidden {
+    opacity: 0;
+  }
+}
+.search-block {
+  width: 0%;
+  right: 0;
+  @extend header;
+  background: #fff;
+  &.active {
+    width: 100%;
+  }
+  .search-control {
+    flex: 1;
+    font-size: 1rem;
+    border: 0;
+    outline: none;
+    padding-left: 10px;
+  }
+}
+.search-block {
+  height: 76px;
+}

@@ -1,0 +1,55 @@
+<!--<section class="intro-section">-->
+<!--  <div-->
+<!--    fxLayout="row"-->
+<!--    fxLayout.xs="column"-->
+<!--    fxFlexFill-->
+<!--    fxLayoutAlign="center center"-->
+<!--  >-->
+<!--    <div fxFlex="50">-->
+<!--      <mat-list>-->
+<!--        <mat-list-item *ngFor="let item of list$ | async | filter: searchText">-->
+<!--          <mat-icon mat-list-avatar style="width:auto">person</mat-icon>-->
+<!--          <div mat-line>{{ item.userId }}</div>-->
+<!--          <div mat-line>{{ item.title }}</div>-->
+<!--          <div mat-line>{{ item.completed }}</div>-->
+<!--        </mat-list-item>-->
+<!--        <mat-list-item *ngIf="!(list$ | async | filter: searchText)">-->
+<!--          <mat-icon mat-list-avatar>error</mat-icon>-->
+<!--          <div mat-line>0 results</div>-->
+<!--          <div mat-line>No matching presidents</div>-->
+<!--        </mat-list-item>-->
+<!--      </mat-list>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+<section class="intro-section" *ngIf="dataSource.length > 0">
+  <div
+    fxLayout="row"
+    fxLayout.xs="column"
+    fxLayoutAlign="center center"
+    class="example-container main mat-elevation-z8"
+  >
+    <table mat-table [dataSource]="list$">
+      <!-- Position Column -->
+      <ng-container matColumnDef="userId">
+        <th mat-header-cell *matHeaderCellDef>No.</th>
+        <td mat-cell *matCellDef="let element">{{ element.userId }}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef>Weight</th>
+        <td mat-cell *matCellDef="let element">{{ element.title }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</section>

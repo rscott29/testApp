@@ -1,0 +1,83 @@
+<mat-toolbar
+  class="main-header header mat-elevation-z4"
+  [class.hidden]="toggleSearch"
+>
+  <mat-toolbar-row style="padding: 0 5px;">
+    <button
+      aria-label="Toggle side nav"
+      (click)="sidenav.toggle()"
+      mat-icon-button
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div style="padding:8px 0 0 10px; flex:1;">
+      <div class="mat-title" style="margin-bottom:2px;">MyApp</div>
+    </div>
+    <mat-icon>notifications_none</mat-icon>
+    <button aria-label="Open Search" mat-icon-button (click)="openSearch()">
+      <mat-icon>search</mat-icon>
+    </button>
+
+    <a class="userMenu" [matMenuTriggerFor]="menu">
+      <mat-icon class="menuDown">arrow_drop_down</mat-icon>
+      <span class="user">
+        {{ username }}
+      </span>
+      <button
+        aria-label="Your Profile Settings"
+        mat-icon-button
+        class="image"
+        [ngStyle]="{'background-image':'url('+avatarUrl+')'}"
+
+      ></button>
+    </a>
+
+    <mat-menu #menu="matMenu">
+      <button (click)="logout()" aria-label="Logout" mat-menu-item>
+        <mat-icon>power_settings_new</mat-icon>
+        <span>Logout</span>
+      </button>
+      <button #profile aria-label="View Profile" mat-menu-item (click)="openProfile()">
+        <mat-icon>person_pin</mat-icon>
+        <span>View Profile</span>
+      </button>
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-toolbar
+  class="search-block mat-elevation-z4"
+  [class.active]="toggleSearch"
+>
+  <mat-toolbar-row style="padding: 0 5px;">
+    <button
+      aria-label="Open Search"
+      class="search-icon"
+      mat-icon-button
+      disabled
+    >
+      <mat-icon>search</mat-icon>
+    </button>
+    <input
+      aria-label="Search Box"
+      class="search-control"
+      type="text"
+      placeholder="Search"
+      [(ngModel)]="searchText"
+      #searchbar
+    />
+    <button
+      aria-label="Close Search"
+      mat-button
+      mat-icon-button
+      (click)="searchClose()"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<app-search-results
+  [searchText]="this.searchText"
+  (nameChanged)="this.searchText = $event"
+></app-search-results>

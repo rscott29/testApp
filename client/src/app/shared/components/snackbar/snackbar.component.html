@@ -1,0 +1,21 @@
+<div class="flex" #pwaInstall>
+  <div class="data">{{ data }}</div>
+
+  <div class="dismiss">
+    <button
+      aria-label="dismiss install"
+      mat-icon-button
+      (click)="snackBarRef.dismiss()"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+    <button
+      aria-label="confirm install"
+      mat-icon-button
+      (click)="installPwa()"
+      class="mat-icon-button"
+    >
+      <mat-icon>done</mat-icon>
+    </button>
+  </div>
+</div>

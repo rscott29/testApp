@@ -1,0 +1,84 @@
+{
+  "configVersion": 1,
+  "timestamp": 1575169697558,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/favicon.ico",
+        "/index.html",
+        "/main-es2015.5175d70205748cd08e8c.js",
+        "/main-es5.5175d70205748cd08e8c.js",
+        "/manifest.webmanifest",
+        "/polyfills-es2015.a780cfedae28d6c58b6f.js",
+        "/polyfills-es5.fdb5c12cd3949181dde8.js",
+        "/runtime-es2015.9788cecebf012972cc0c.js",
+        "/runtime-es5.9788cecebf012972cc0c.js",
+        "/styles.98899edc8d1c9872867a.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/images/Rainbow-Vortex.svg",
+        "/assets/images/yellow-bokeh-photo-949587.jpg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/assets/images/Rainbow-Vortex.svg": "7adac14a833ded9dbc4eb13cd697a1d37edbfdcd",
+    "/assets/images/yellow-bokeh-photo-949587.jpg": "571430fe70af15be72ce11e5551e3adf18f3a7aa",
+    "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/index.html": "c3567f2f918c65c5e459d33d16b9cd2b8520ac60",
+    "/main-es2015.5175d70205748cd08e8c.js": "d6274d64b84bfe07b2f5b754c6c17842daf184fc",
+    "/main-es5.5175d70205748cd08e8c.js": "838480304d43cda3046d5b1457004b47cb19c14e",
+    "/manifest.webmanifest": "544ccefebd8bb79e48d197b37e493b17bc1ca386",
+    "/polyfills-es2015.a780cfedae28d6c58b6f.js": "8d657a1a62b4a0583fdebe73e9b4203b5d20657e",
+    "/polyfills-es5.fdb5c12cd3949181dde8.js": "6758db182a9c7953a66da00f3e8e24d3f78a04d6",
+    "/runtime-es2015.9788cecebf012972cc0c.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/runtime-es5.9788cecebf012972cc0c.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/styles.98899edc8d1c9872867a.css": "a1b693af40cb099c094e1ec29a0bd90c86c60760"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}

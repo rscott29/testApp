@@ -1,0 +1,42 @@
+html,
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+
+  height: 100%;
+}
+.mat-snack-bar-container.spaInstall {
+  color: hotpink;
+  position: relative;
+  top: 50px;
+}
+.mat-snack-bar-container .flex {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+p {
+  font-family: Lato, sans-serif;
+}
+
+.main_content {
+  width: 100%;
+  padding: 22px;
+  height: calc(100vh - 45px);
+  background: #efefef;
+}
+.bg-img{
+  background-color: #ff9d00;
+  background-image: url('/assets/images/Rainbow-Vortex.svg');
+  background-attachment: fixed;
+  background-size: cover;
+}
+.mat-snack-bar-container{
+  margin-top: 90px!important;
+}
+mat-form-field {
+  width: 220px;
+}
+.mat-form-field-infix {
+  border-top: none;
+}
